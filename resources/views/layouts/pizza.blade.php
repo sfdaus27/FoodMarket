@@ -21,19 +21,19 @@
     <div class="square">
         @foreach($pizzas as $pizza)
         <div class="bigpizza">
-            <form action="/cart_create_pizza/{{$pizza['id']}}" method="post">@csrf 
             <img src="{{$pizza['image']}}" class="img-fluid">
             <p class="product-title">{{$pizza['jenis_pizza']}}</p>
             <p class="product-title">IDR {{$pizza['harga']}}</p>
             <div class="quantity">
-                <button id="min" type="button" class="glyphicon glyphicon-minus" onclick="hitung('-', {{$pizza['id']}})"></button>
-                <label for="quantity">
-                    <input style="width: 35px; border:none;text-align: center; margin-bottom:10px;" name="quantity" value="1" id="{{$pizza['id']}}" />
-                </label>
-                <button id="plus" type="button" class="glyphicon glyphicon-plus" onclick="hitung('+', {{$pizza['id']}})"></button>
+                <form action="/cart_create/pizza/{{$pizza['id']}}" method="post">@csrf
+                    <button id="min" type="button" class="glyphicon glyphicon-minus" onclick="hitung('-', {{$pizza['id']}})" value=""></button>
+                    <label for="quantity">
+                        <input style="width: 35px; border:none;text-align: center; margin-bottom:10px;" name="quantity" value="0" id="{{$pizza['id']}}" />
+                    </label>
+                    <button id="plus" type="button" class="glyphicon glyphicon-plus" onclick="hitung('+', {{$pizza['id']}})" value="{{$pizza['id']}}"></button>
             </div>
-            <a id="ProductBtn" type="submit" class="btn btn-primary"><button type="submit" class="btn light"> Order Now </button></a>
-        </form>
+                <button type="submit" class="btn btn-primary"> Order Now </button>
+            </form>
         </div>
         @endforeach
     </div>
@@ -43,7 +43,7 @@
 @section('jscript')
 <script language="JavaScript">
     function hitung(operasi, id) {
-        id = id.toString();   
+        id = id.toString();
         bil1 = document.getElementById(id).value;
         if (operasi == "+") {
             bil1 = parseInt(bil1);

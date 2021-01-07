@@ -24,6 +24,8 @@ Route::get('/drink', [PagesController::class,'drink']);
 Route::get('/about', [PagesController::class,'about']);
 Route::get('/location', [PagesController::class,'location']);
 Route::get('/profile', [PagesController::class,'profile']);
+Route::get('/payment', [PagesController::class,'payment']);
+Route::get('/summary', [PagesController::class,'summary']);
 
 // Route::get('/cart', [PagesController::class,'cart']);
 
@@ -47,8 +49,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/cart', [App\Http\Controllers\CartController::class,'create']);
-Route::post('/cart_create_burger/{id}', [App\Http\Controllers\CartController::class,'burger']);
-Route::post('/cart_create_pizza/{id}', [App\Http\Controllers\CartController::class,'pizza']);
-Route::post('/cart_create_drink/{id}', [App\Http\Controllers\CartController::class,'drink']);
+Route::post('/cart_create/{type}/{id}', [App\Http\Controllers\CartController::class,'store']);
 Route::get('/cart_delete/{id}', [App\Http\Controllers\CartController::class,'destroy']);
 
+
+// Route::post('/summary', [App\Http\Controllers\CheckoutController::class,'store']);

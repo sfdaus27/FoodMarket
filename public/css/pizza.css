@@ -28,6 +28,8 @@ transition: transform .2s;
 h1{
   margin-left: 95px;
   font-family: 'Montserrat', sans-serif;
+  color :#B81900;
+
 }
 .product-title{
   font-weight: 700;

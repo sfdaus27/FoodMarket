@@ -1,9 +1,8 @@
 @extends('layouts/base')
 
 @section('head')
-<!-- <link rel="stylesheet" href="{ 'css/dashboard.css' %}" /> -->
+<link rel="stylesheet" href="{ 'css/dashboard.css' %}" />
 <link href="css/bootstrap.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="{{ URL::asset('css/dashboard.css') }}" /> -->
 @endsection
 
 

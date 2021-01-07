@@ -21,19 +21,21 @@
     <div class="square">
         @foreach($drinks as $drink)
         <div class="drink">
-            <form action="/cart_create_drink/{{$drink['id']}}" method="post">@csrf 
             <img src="{{$drink['image']}}" class="img-fluid">
             <p class="product-title">{{$drink['jenis_minuman']}}</p>
             <p class="product-title">IDR {{$drink['harga']}}</p>
             <div class="quantity">
-                <button id="min" type="button" class="glyphicon glyphicon-minus" onclick="hitung('-', {{$drink['id']}})"></button>
-                <label for="quantity">
-                    <input style="width: 35px; border:none;text-align: center; margin-bottom:10px;" name="quantity" value="1" id="{{$drink['id']}}" />
-                </label>
-                <button id="plus" type="button" class="glyphicon glyphicon-plus" onclick="hitung('+',{{$drink['id']}})"></button>
+                <form action="/cart_create/drink/{{$drink['id']}}" method="post">@csrf
+                    <button id="min" type="button" class="glyphicon glyphicon-minus" onclick="hitung ('-', {{$drink['id']}})" value= ""></button>
+                    <label for="quantity">
+                        <input style="width: 35px; border:none;text-align: center; margin-bottom:10px;" name="quantity" value="0" id="{{$drink['id']}}"/>
+                    </label>
+                    <button id="plus" type="button" class="glyphicon glyphicon-plus" onclick="hitung ('+', {{$drink['id']}})" value="{{$drink['id']}})"></button>
             </div>
-            <a id="ProductBtn" type="submit" class="btn btn-primary"><button type="submit" class="btn light"> Order Now </button></a>
-        </form>
+                <!-- <a id="ProductBtn" type="submit" class="btn btn-primary"> -->
+                    <button type="submit" class="btn btn-primary"> Order Now </button>
+                <!-- </a> -->
+                </form>
         </div>
         @endforeach
     </div>

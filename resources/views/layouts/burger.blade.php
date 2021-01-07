@@ -25,15 +25,17 @@
             <p class="product-title">{{$burger ['jenis_burger']}}</p>
             <p class="product-title">IDR {{$burger['harga']}}</p>
             <div class="quantity">
-                <form action="/cart_create_burger/{{$burger['id']}}" method="post">@csrf 
-                <button id="min" type="button" class="glyphicon glyphicon-minus" onclick="hitung('-', {{$burger['id']}})" value=""></button>
-                
-                <label for="quantity">
-                    <input style="width: 35px; border:none;text-align: center; margin-bottom:10px;" name="quantity" value="1" id="{{$burger['id']}}" />
-                </label>
+                <form action="/cart_create/burger/{{$burger['id']}}" method="post">
+                {!! csrf_field() !!}
+                    <button id="min" type="button" class="glyphicon glyphicon-minus" onclick="hitung('-', {{$burger['id']}})" value=""></button>
+                    <label for="quantity">
+                        <input style="width: 35px; border:none;text-align: center; margin-bottom:10px;" name="quantity" value="0" id="{{$burger['id']}}" />
+                    </label>
                     <button id="plus" type="button" class="glyphicon glyphicon-plus" onclick="hitung('+', {{$burger['id']}})" value="{{$burger['id']}}"></button>
-                </div>
-                <a id="ProductBtn" type="submit" class="btn btn-primary"><button type="submit" class="btn light"> Order Now </button></a>
+            </div>
+            <!-- <a id="ProductBtn" type="submit" class="btn btn-primary"> -->
+                <button type="submit" class="btn btn-primary"> Order Now </button>
+            <!-- </a> -->
             </form>
         </div>
         @endforeach
@@ -42,8 +44,8 @@
 @endsection
 @section('jscript')
 <script language="JavaScript">
-    function hitung(operasi,id) {
-        id = id.toString();   
+    function hitung(operasi, id) {
+        id = id.toString();
         bil1 = document.getElementById(id).value;
         if (operasi == "+") {
             bil1 = parseInt(bil1);

@@ -1,49 +1,51 @@
 .drink{
-width: 300px;
-height: 380px;
-background-color:orange;
-border: solid #ff692e;
-border-radius: 12px;
-margin-left: 115px;
-margin-top: 40px;
-margin-bottom: 0px;
-padding-left: 35px;
-padding-right: 35px;
-padding-top: 20px;
-transition: transform .2s;
-}
-
-.drink:hover {
+    width: 300px;
+    height: 380px;
+    background-color:orange;
+    border: solid #ff692e;
+    border-radius: 12px;
+    margin-left: 115px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 20px;
+    transition: transform .2s;
+    }
+    
+    .drink:hover {
     transform: scale(1.050);
-  }
-
-.square{
+    }
+    
+    .square{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-}
-
-h1{
+    }
+    
+    h1{
     margin-left: 95px;
     font-family: 'Montserrat', sans-serif;
-}
-.product-title{
+    color : #B81900;
+    
+    }
+    .product-title{
     font-weight: 700;
     text-align: center;
     padding: 0;
     font-size: 2rem;
     color: black;
     font-family: 'Roboto', sans-serif;
-
-}
-.img-fluid{
+    
+    }
+    .img-fluid{
     margin: auto;
     display: block;
-    max-width: 100%; 
+    max-width: 100%;
     height: auto;
-}
-.btn.btn-primary {
+    }
+    .btn.btn-primary {
     font-size: 10px;
     text-align: center;
     align-content: center;
@@ -56,44 +58,43 @@ h1{
     background-color: white !important;
     display:block;
     margin: auto;
-}
-.back{
+    }
+    .back{
     display: flex;
     flex-direction: row;
     margin-left: 95px;
-
-}
-.back i {
+    
+    }
+    .back i {
     height: fit-content;
     text-transform: uppercase;
     color: #333333;
-    letter-spacing: 3px;  
-}
-
-.back h1{
+    letter-spacing: 3px;
+    }
+    
+    .back h1{
     margin: 0 !important;
-}
-
-.quantity{
+    }
+    
+    .quantity{
     width: fit-content;
     margin: auto;
-}
-#min{
+    }
+    #min{
     color: black;
     border:none;
     background-color: transparent;
-}
-#min:focus{
+    }
+    #min:focus{
     border: none;
     outline: none;
-}
-#plus{
+    }
+    #plus{
     color: black;
     border:none;
     background-color: transparent;
-}
-#plus:focus{
+    }
+    #plus:focus{
     border: none;
     outline: none;
-}
-
+    }

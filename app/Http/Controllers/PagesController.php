@@ -36,4 +36,10 @@ class PagesController extends Controller
     public function profile(){
         return view ('layouts/profile');
     }
+    public function payment(){
+        return view ('layouts/payment');
+    }
+    public function summary(){
+        return view ('layouts/summary');
+    }
 }
